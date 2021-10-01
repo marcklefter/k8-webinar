@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delivery Locator</title>
+  <style>
+    #map {
+      width: 100%;
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Content -->
+  <div id="map"></div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+  
+  <!-- NOTE: This script requires an API key! -->
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=<YOUR_API_KEY_HERE>&callback=initMap&libraries=&v=weekly"
+      async
+  ></script>
+
+</body>
+</html>

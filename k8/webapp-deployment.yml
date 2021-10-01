@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dep-webapp
+spec:
+  template:
+    metadata:
+      name: pod-webapp
+      labels:
+        runAs: webapp
+    spec:
+      containers:
+        - name: webapp
+          image: mk/webapp
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+  selector:
+    matchLabels:
+      runAs: webapp
+  replicas: 2

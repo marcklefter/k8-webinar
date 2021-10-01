@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dep-api
+spec:
+  template:
+    metadata:
+      name: pod-api
+      labels:
+        runAs: api
+    spec:
+      containers:
+        - name: api
+          image: mk/api
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+  selector:
+    matchLabels:
+      runAs: api
+  replicas: 2
